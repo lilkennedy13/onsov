@@ -1,0 +1,30 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class dva {
+    public static void main(String[] args) {
+        Scanner in =new Scanner(System.in);
+        System.out.print("n=");
+        int n= in.nextInt();
+        System.out.print("m=");
+        int m= in.nextInt();
+        int[][]b=new int[n][m];
+        for(int i=0;i<n;i++)
+            for(int j=0;j<m;j++){
+                b[i][j]=new Random().nextInt(-15,15);
+            }
+        for(int j=0;j<m;j++){
+            int p=1;
+            for(int i=0;i<n;i++){
+                p=p*b[i][j];
+            }
+            System.out.println("произведние "+(j+1)+"столбца p="+p);
+        }
+        for(int i=0;i<n;i++){
+            for(int j=0;j<m;j++){
+                System.out.printf("%5d",b[i][j]);
+            }
+            System.out.println();
+        }
+    }
+}
