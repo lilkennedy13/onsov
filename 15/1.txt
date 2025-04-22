@@ -1,0 +1,42 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in =new Scanner(System.in);
+        System.out.print("n=");
+        int n= in.nextInt();
+        System.out.print("m=");
+        int m= in.nextInt();
+        int[][]b=new int[m][n];
+        for(int i=0;i<m;i++)
+            for(int j=0;j<n;j++){
+                b[i][j]=new Random().nextInt(-15,15);
+            }
+
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                System.out.printf("%5d",b[i][j]);
+            }
+            System.out.println();
+        }
+        System.out.print("введите номер столбца K1=");
+        int k1= in.nextInt();;
+        System.out.print("введите номер столбца K2=");
+        int k2= in.nextInt();
+        int t;
+        for (int i = 0; i < m; i++)
+        {
+            t = b[i][k1-1];
+            b[i][k1-1] = b[i][k2-1];
+            b[i][k2-1] = t;
+        }
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                System.out.printf("%5d",b[i][j]);
+            }
+            System.out.println();
+        }
+
+    }
+}
