@@ -20,14 +20,13 @@ public class Main {
             }
             System.out.println();
         }
-        System.out.print("введите номер столбца K1=");
-        int k1= in.nextInt();;
-        System.out.print("введите номер столбца K2=");
+        System.out.print("K1=");
+        int k1= in.nextInt();
+        System.out.print("K2=");
         int k2= in.nextInt();
-        int t;
         for (int i = 0; i < m; i++)
         {
-            t = b[i][k1-1];
+           int t = b[i][k1-1];
             b[i][k1-1] = b[i][k2-1];
             b[i][k2-1] = t;
         }
